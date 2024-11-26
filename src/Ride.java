@@ -8,6 +8,7 @@ public class Ride implements RideInterface{
     private Employee operator;
     private Queue<Visitor> queue;               // Queue to manage visitors
     private LinkedList<Visitor> rideHistory;    // History of visitors who took the ride
+
     // Default Constructor
     public Ride() {
         this.queue = new LinkedList<>();
@@ -19,6 +20,8 @@ public class Ride implements RideInterface{
         this.name = name;
         this.maxRiders = maxRiders;
         this.operator = operator;
+        this.queue = new LinkedList<>();
+        this.rideHistory = new LinkedList<>();
     }
         // Getters and Setters
         public String getName() {
