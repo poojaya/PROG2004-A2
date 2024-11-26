@@ -85,6 +85,18 @@ public class Ride implements RideInterface{
         public int numberOfVisitors() {
             return rideHistory.size();
         }
+        @Override
+        public void printRideHistory() {
+            if (!rideHistory.isEmpty()) {
+                System.out.println("Ride History:");
+                for (Visitor visitor : rideHistory) {
+                    System.out.println(visitor.getName());
+                }
+            } else {
+                System.out.println("No visitors in ride history.");
+            }
+        }
+
 
 
 
