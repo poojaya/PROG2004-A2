@@ -52,5 +52,13 @@ public class Ride implements RideInterface{
             queue.add(visitor);
             System.out.println("Added visitor to queue: " + visitor.getName());
         }
-        
+        @Override
+        public void removeVisitorFromQueue() {
+            if (!queue.isEmpty()) {
+                Visitor removedVisitor = queue.poll();
+                System.out.println("Removed visitor from queue: " + removedVisitor.getName());
+            } else {
+                System.out.println("Queue is empty. No visitors to remove.");
+            }
+        }
 }
