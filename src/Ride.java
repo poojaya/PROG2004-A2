@@ -9,7 +9,10 @@ public class Ride implements RideInterface{
     private Queue<Visitor> queue;               // Queue to manage visitors
     private LinkedList<Visitor> rideHistory;    // History of visitors who took the ride
     // Default Constructor
-    public Ride() {}
+    public Ride() {
+        this.queue = new LinkedList<>();
+        this.rideHistory = new LinkedList<>();
+    }
 
     // Parameterized Constructor
     public Ride(String name, int maxRiders, Employee operator) {
