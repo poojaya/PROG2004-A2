@@ -47,4 +47,10 @@ public class Ride implements RideInterface{
         public void setOperator(Employee operator) {
             this.operator = operator;
         }
+        @Override
+        public void addVisitorToQueue(Visitor visitor) {
+            queue.add(visitor);
+            System.out.println("Added visitor to queue: " + visitor.getName());
+        }
+        
 }
