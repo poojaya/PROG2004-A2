@@ -1,10 +1,13 @@
 package src;
-
+import java.util.LinkedList;
+import java.util.Queue;
 // Ride class
-public class Ride {
+public class Ride implements RideInterface{
     private String name;
     private int maxRiders;
     private Employee operator;
+    private Queue<Visitor> queue;               // Queue to manage visitors
+    private LinkedList<Visitor> rideHistory;    // History of visitors who took the ride
     // Default Constructor
     public Ride() {}
 
