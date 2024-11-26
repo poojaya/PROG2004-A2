@@ -81,6 +81,11 @@ public class Ride implements RideInterface{
         public boolean checkVisitorFromHistory(Visitor visitor) {
             return rideHistory.contains(visitor);
         }
+        @Override
+        public int numberOfVisitors() {
+            return rideHistory.size();
+        }
+
 
 
 
