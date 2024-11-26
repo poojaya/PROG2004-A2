@@ -13,4 +13,20 @@ public class Employee extends Person {
         this.employeeId = employeeId;
         this.role = role;
 }
+    // Getters and Setters
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
