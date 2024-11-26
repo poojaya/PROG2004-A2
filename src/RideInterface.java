@@ -1,7 +1,5 @@
 package src;
-
 // RideInterface
-import java.util.LinkedList;
 
 public interface RideInterface {
     void addVisitorToQueue(Visitor visitor);         // Add visitor to queue
@@ -13,4 +11,3 @@ public interface RideInterface {
     int numberOfVisitors();                         // Number of visitors in ride history
     void printRideHistory();                        // Print ride history
 }
-

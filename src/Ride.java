@@ -72,5 +72,11 @@ public class Ride implements RideInterface{
                 System.out.println("Queue is empty.");
             }
         }
+        @Override
+        public void addVisitorToHistory(Visitor visitor) {
+            rideHistory.add(visitor);
+            System.out.println("Added visitor to ride history: " + visitor.getName());
+        }
+
 
 }

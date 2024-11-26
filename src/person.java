@@ -4,7 +4,7 @@ public abstract class Person {
     private String name;
     private int age;
     private String gender;
-    
+
     // Default Constructor
     public Person() {}
 
@@ -14,7 +14,8 @@ public abstract class Person {
         this.age = age;
         this.gender = gender;
     }
-        // Getters and Setters
+
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -37,6 +38,5 @@ public abstract class Person {
 
     public void setGender(String gender) {
         this.gender = gender;
-    
-}
+    }
 }
