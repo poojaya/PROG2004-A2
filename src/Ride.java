@@ -14,4 +14,28 @@ public class Ride {
         this.maxRiders = maxRiders;
         this.operator = operator;
     }
+        // Getters and Setters
+        public String getName() {
+            return name;
+        }
+    
+        public void setName(String name) {
+            this.name = name;
+        }
+    
+        public int getMaxRiders() {
+            return maxRiders;
+        }
+    
+        public void setMaxRiders(int maxRiders) {
+            this.maxRiders = maxRiders;
+        }
+    
+        public Employee getOperator() {
+            return operator;
+        }
+    
+        public void setOperator(Employee operator) {
+            this.operator = operator;
+        }
 }
