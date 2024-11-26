@@ -61,4 +61,16 @@ public class Ride implements RideInterface{
                 System.out.println("Queue is empty. No visitors to remove.");
             }
         }
+        @Override
+        public void printQueue() {
+            if (!queue.isEmpty()) {
+                System.out.println("Visitors in the queue:");
+                for (Visitor visitor : queue) {
+                    System.out.println(visitor.getName());
+                }
+            } else {
+                System.out.println("Queue is empty.");
+            }
+        }
+
 }
