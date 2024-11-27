@@ -52,5 +52,8 @@ public class AssignmentTwo {
 
         // Print the number of visitors in the history
         System.out.println("Total visitors in ride history: " + rollerCoaster.numberOfVisitors());
+        
+        // Print all visitors in the history using Iterator
+        rollerCoaster.printRideHistory();
     }
 }
