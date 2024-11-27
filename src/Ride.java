@@ -1,4 +1,5 @@
 package src;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 // Ride class
@@ -116,6 +117,10 @@ public void runOneCycle() {
         addVisitorToHistory(visitor);
         System.out.println("Visitor took the ride: " + visitor.getName());
     }
+}
+public void sortRideHistory() {
+    Collections.sort(rideHistory, new VisitorComparator());
+    System.out.println("Ride history sorted successfully.");
 }
 
 }
