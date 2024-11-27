@@ -48,18 +48,55 @@ public class AssignmentTwo {
         rollerCoaster.printRideHistory();
 
         System.out.println("------------------------");
-        
+    }
+
+    public void partFourA() {
+        // Create a new Ride object
+        Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
+        Ride rollerCoaster = new Ride("Roller Coaster", 20, emp);
+            
+        // Add 5 Visitors to the ride history
+        Visitor v1 = new Visitor("Alice", 25, "Female", "V001", true);
+        Visitor v2 = new Visitor("Bob", 28, "Male", "V002", false);
+        Visitor v3 = new Visitor("Charlie", 23, "Male", "V003", false);
+        Visitor v4 = new Visitor("Diana", 26, "Female", "V004", true);
+        Visitor v5 = new Visitor("Eve", 29, "Female", "V005", false);
+            
+        rollerCoaster.addVisitorToHistory(v1);
+        rollerCoaster.addVisitorToHistory(v2);
+        rollerCoaster.addVisitorToHistory(v3);
+        rollerCoaster.addVisitorToHistory(v4);
+        rollerCoaster.addVisitorToHistory(v5);
+
         // Check if a specific Visitor is in the history
         System.out.println("Is Bob in the history? " + rollerCoaster.checkVisitorFromHistory(v2));
 
         // Print the number of visitors in the history
         System.out.println("Total visitors in ride history: " + rollerCoaster.numberOfVisitors());
-        
+            
         // Print all visitors in the history using Iterator
         rollerCoaster.printRideHistory();
 
         System.out.println("------------------------");
+    }
 
+    public void partFourB() {
+        // Create a new Ride object
+        Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
+        Ride rollerCoaster = new Ride("Roller Coaster", 20, emp);
+
+        // Add 5 Visitors to the ride history
+        Visitor v1 = new Visitor("Alice", 25, "Female", "V001", true);
+        Visitor v2 = new Visitor("Bob", 28, "Male", "V002", false);
+        Visitor v3 = new Visitor("Charlie", 23, "Male", "V003", false);
+        Visitor v4 = new Visitor("Diana", 26, "Female", "V004", true);
+        Visitor v5 = new Visitor("Eve", 29, "Female", "V005", false);
+
+        rollerCoaster.addVisitorToHistory(v1);
+        rollerCoaster.addVisitorToHistory(v2);
+        rollerCoaster.addVisitorToHistory(v3);
+        rollerCoaster.addVisitorToHistory(v4);
+        rollerCoaster.addVisitorToHistory(v5);
         // Print unsorted ride history
         System.out.println("Unsorted Ride History:");
         rollerCoaster.printRideHistory();
@@ -70,5 +107,5 @@ public class AssignmentTwo {
         // Print sorted ride history
         System.out.println("Sorted Ride History:");
         rollerCoaster.printRideHistory();
-    }
+        }
 }
