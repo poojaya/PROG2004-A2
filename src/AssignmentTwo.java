@@ -47,6 +47,8 @@ public class AssignmentTwo {
         System.out.println("Ride: " + rollerCoaster.getName() + ", Operator: " + rollerCoaster.getOperator().getName());
         rollerCoaster.printRideHistory();
 
+        System.out.println("------------------------");
+        
         // Check if a specific Visitor is in the history
         System.out.println("Is Bob in the history? " + rollerCoaster.checkVisitorFromHistory(v2));
 
@@ -55,6 +57,8 @@ public class AssignmentTwo {
         
         // Print all visitors in the history using Iterator
         rollerCoaster.printRideHistory();
+
+        System.out.println("------------------------");
 
         // Print unsorted ride history
         System.out.println("Unsorted Ride History:");
