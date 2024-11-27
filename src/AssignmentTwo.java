@@ -55,5 +55,16 @@ public class AssignmentTwo {
         
         // Print all visitors in the history using Iterator
         rollerCoaster.printRideHistory();
+
+        // Print unsorted ride history
+        System.out.println("Unsorted Ride History:");
+        rollerCoaster.printRideHistory();
+
+        // Sort the ride history
+        rollerCoaster.sortRideHistory();
+
+        // Print sorted ride history
+        System.out.println("Sorted Ride History:");
+        rollerCoaster.printRideHistory();
     }
 }
