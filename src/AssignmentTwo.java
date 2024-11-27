@@ -108,4 +108,8 @@ public class AssignmentTwo {
         System.out.println("Sorted Ride History:");
         rollerCoaster.printRideHistory();
         }
+    public void partFive() {
+        Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
+        Ride rollerCoaster = new Ride("Roller Coaster", 5, emp);
+    }
 }
