@@ -115,6 +115,9 @@ public class AssignmentTwo {
         // Add 10 visitors to the queue
         for (int i = 1; i <= 10; i++) {
             rollerCoaster.addVisitorToQueue(new Visitor("Visitor" + i, 20 + i, "Male", "V00" + i, i % 2 == 0));
+        // Print queue before running a cycle
+        System.out.println("Queue Before Cycle:");
+        rollerCoaster.printQueue();
         }
     }
 }
