@@ -111,5 +111,10 @@ public class AssignmentTwo {
     public void partFive() {
         Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
         Ride rollerCoaster = new Ride("Roller Coaster", 5, emp);
+    
+        // Add 10 visitors to the queue
+        for (int i = 1; i <= 10; i++) {
+            rollerCoaster.addVisitorToQueue(new Visitor("Visitor" + i, 20 + i, "Male", "V00" + i, i % 2 == 0));
+        }
     }
 }
