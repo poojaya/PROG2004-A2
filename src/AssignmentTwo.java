@@ -46,9 +46,11 @@ public class AssignmentTwo {
         rollerCoaster.printQueue();
         System.out.println("Ride: " + rollerCoaster.getName() + ", Operator: " + rollerCoaster.getOperator().getName());
         rollerCoaster.printRideHistory();
-        
+
         // Check if a specific Visitor is in the history
         System.out.println("Is Bob in the history? " + rollerCoaster.checkVisitorFromHistory(v2));
 
+        // Print the number of visitors in the history
+        System.out.println("Total visitors in ride history: " + rollerCoaster.numberOfVisitors());
     }
 }
