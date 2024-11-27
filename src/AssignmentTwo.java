@@ -122,6 +122,10 @@ public class AssignmentTwo {
 
         // Run one cycle
         rollerCoaster.runOneCycle();
+        
+        // Print queue after running a cycle
+        System.out.println("Queue After Cycle:");
+        rollerCoaster.printQueue();
         }
     }
 }
