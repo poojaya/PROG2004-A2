@@ -2,6 +2,7 @@ package src;
 
 public class AssignmentTwo {
     public static void main(String[] args) {
+        
         // Test Person, Employee, Visitor, and Ride classes
         Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
         Visitor vis = new Visitor("Jane Smith", 28, "Female", "V001", true);
@@ -20,19 +21,31 @@ public class AssignmentTwo {
         rollerCoaster.addVisitorToQueue(v4);
         rollerCoaster.addVisitorToQueue(v5);
 
+        // Add Visitors to history
+        rollerCoaster.addVisitorToHistory(v1);
+        rollerCoaster.addVisitorToHistory(v2);
+        rollerCoaster.addVisitorToHistory(v3);
+        rollerCoaster.addVisitorToHistory(v4);
+        rollerCoaster.addVisitorToHistory(v5);
+
         // Print queue
+        System.out.println("\nQueue Before Removing Visitors:");
         rollerCoaster.printQueue();
 
         // Remove a visitor from queue
         rollerCoaster.removeVisitorFromQueue();
 
         // Print updated queue
+        System.out.println("\nQueue After Removing One Visitor:");
         rollerCoaster.printQueue();
-    
 
         // Print details
         System.out.println("Employee: " + emp.getName() + ", Role: " + emp.getRole());
+        rollerCoaster.runOneCycle();
         System.out.println("Visitor: " + vis.getName() + ", VIP: " + vis.isVip());
+        rollerCoaster.printQueue();
         System.out.println("Ride: " + rollerCoaster.getName() + ", Operator: " + rollerCoaster.getOperator().getName());
+        rollerCoaster.printRideHistory();
     }
+
 }
