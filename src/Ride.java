@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.io.*;
-import java.util.*;
 // Ride class
 public class Ride implements RideInterface{
     private String name;
