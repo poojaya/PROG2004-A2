@@ -144,6 +144,17 @@ public class AssignmentTwo {
         // Export ride history to a file
         rollerCoaster.exportRideHistory("ride_history.csv");
     }
+    
+    public void partSeven() {
+        Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
+        Ride rollerCoaster = new Ride("Roller Coaster", 5, emp);
         
+        // Import ride history from a file
+        rollerCoaster.importRideHistory("ride_history.csv");
+        
+        // Print imported ride history
+        System.out.println("Imported Ride History:");
+        rollerCoaster.printRideHistory();
+    }        
 }
-
+        

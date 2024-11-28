@@ -2,9 +2,8 @@ package src;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.*;
 // Ride class
 public class Ride implements RideInterface{
     private String name;
@@ -137,5 +136,26 @@ public class Ride implements RideInterface{
             System.out.println("An error occurred while exporting ride history: " + e.getMessage());
         }
     }
+    public void importRideHistory(String filePath) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length == 5) { // Adjust based on Visitor fields
+                    String name = details[0];
+                    int age = Integer.parseInt(details[1]);
+                    String gender = details[2];
+                    String ticketId = details[3];
+                    boolean isVip = Boolean.parseBoolean(details[4]);
+                    Visitor visitor = new Visitor(name, age, gender, ticketId, isVip);
+                    addVisitorToHistory(visitor);
+                }
+            }
+            System.out.println("Ride history imported successfully from " + filePath);
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+
 }
         
