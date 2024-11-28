@@ -2,6 +2,9 @@ package src;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 // Ride class
 public class Ride implements RideInterface{
     private String name;
@@ -97,30 +100,42 @@ public class Ride implements RideInterface{
                 System.out.println("No visitors in ride history.");
             }
         }
-        @Override
-public void runOneCycle() {
-    if (operator == null) {
-        System.out.println("No operator assigned. Cannot run the ride.");
-        return;
+    @Override
+    public void runOneCycle() {
+        if (operator == null) {
+            System.out.println("No operator assigned. Cannot run the ride.");
+            return;
+        }
+
+        if (queue.isEmpty()) {
+            System.out.println("No visitors in the queue. Cannot run the ride.");
+            return;
+        }
+
+        System.out.println("Running one cycle of the ride: " + name);
+
+        int riders = Math.min(maxRiders, queue.size());
+        for (int i = 0; i < riders; i++) {
+            Visitor visitor = queue.poll();
+            addVisitorToHistory(visitor);
+            System.out.println("Visitor took the ride: " + visitor.getName());
+        }
     }
-
-    if (queue.isEmpty()) {
-        System.out.println("No visitors in the queue. Cannot run the ride.");
-        return;
+    public void sortRideHistory() {
+        Collections.sort(rideHistory, new VisitorComparator());
+        System.out.println("Ride history sorted successfully.");;
     }
-
-    System.out.println("Running one cycle of the ride: " + name);
-
-    int riders = Math.min(maxRiders, queue.size());
-    for (int i = 0; i < riders; i++) {
-        Visitor visitor = queue.poll();
-        addVisitorToHistory(visitor);
-        System.out.println("Visitor took the ride: " + visitor.getName());
+      
+    public void exportRideHistory(String fileName) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            for (Visitor visitor : rideHistory) {
+                writer.write(visitor.getName() + "," + visitor.getAge() + "," + visitor.getGender() + "," + visitor.getTicketId() + "," + visitor.isVip());
+                writer.newLine();
+            }
+            System.out.println("Ride history exported successfully to " + fileName);
+        } catch (IOException e) {
+            System.out.println("An error occurred while exporting ride history: " + e.getMessage());
+        }
     }
 }
-public void sortRideHistory() {
-    Collections.sort(rideHistory, new VisitorComparator());
-    System.out.println("Ride history sorted successfully.");
-}
-
-}
+        

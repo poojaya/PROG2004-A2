@@ -126,10 +126,24 @@ public class AssignmentTwo {
         // Print queue after running a cycle
         System.out.println("Queue After Cycle:");
         rollerCoaster.printQueue();
-        
+
         // Print updated ride history
         System.out.println("Ride History After Cycle:");
         rollerCoaster.printRideHistory();
         }
     }
+
+    public void partSix() {
+        Employee emp = new Employee("John Doe", 35, "Male", "E123", "Ride Operator");
+        Ride rollerCoaster = new Ride("Roller Coaster", 5, emp);
+        
+        // Add 5 visitors to the ride history
+        for (int i = 1; i <= 5; i++) {
+            rollerCoaster.addVisitorToHistory(new Visitor("Visitor" + i, 20 + i, "Male", "V00" + i, i % 2 == 0));
+        }
+        // Export ride history to a file
+        rollerCoaster.exportRideHistory("ride_history.csv");
+    }
+        
 }
+
